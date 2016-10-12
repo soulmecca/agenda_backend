@@ -5,6 +5,7 @@ class Api::PeopleController < ApplicationController
     end
 
     def create
+      binding.pry
       @person = Person.new(person_params)
         if @person.save
           render json: @person, status: 201
