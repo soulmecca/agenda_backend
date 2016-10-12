@@ -24,7 +24,7 @@ class Api::PeopleController < ApplicationController
         if @person.update(person_params)
           render json: @person, status: 200
         else
-          render json: {status: "Failed ot update person"}
+          render json: {status: "Failed to update person"}
         end
     end
 
@@ -34,12 +34,10 @@ class Api::PeopleController < ApplicationController
       # @person = Person.find(params[:id])
     end
 
-    def delete
-      puts('######################')
-      puts('DELETE')      
-      # @person = Person.find(params[:id])
-      # @person.destroy
-      # render json: {result: "info is destroyed"}, status: 200
+    def destroy     
+      @person = Person.find(params[:id])
+      @person.destroy
+      render json: {result: "info is destroyed"}, status: 200
     end
 
     private
