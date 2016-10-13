@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-	get 'agenda/all'
+	# get 'agenda/all'
 	
 	namespace :api, constraints: { format: :json} do 
 	  	get 'people' => 'agenda#all'
-      resource :people
+      resources :people
 	end
 
 end

@@ -8,7 +8,6 @@ class Api::PeopleController < ApplicationController
     def create
       puts('######################')
       puts('CREATE')
-      
       @person = Person.new(person_params)
         if @person.save
           render json: @person, status: 201
